@@ -3,12 +3,15 @@ import pytest
 
 def test_accessibility():
     with sync_playwright() as p:
+        url = input("Please enter the application URL for accessibility testing: ")
+
         # Launch the browser
         browser = p.chromium.launch(headless=False)
         page = browser.new_page()
 
         # Navigate to the page you want to test
-        page.goto('https://www.saucedemo.com/')
+        
+        page.goto('url')
 
         # Inject axe-core script into the page
         page.add_script_tag(url="https://cdnjs.cloudflare.com/ajax/libs/axe-core/4.7.2/axe.min.js")
