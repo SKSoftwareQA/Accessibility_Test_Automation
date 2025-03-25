@@ -11,7 +11,8 @@ def test_accessibility():
 
         # Navigate to the page you want to test
         
-        page.goto('url')
+        page.goto(url)
+        #page.wait_for_timeout(5000)
 
         # Inject axe-core script into the page
         page.add_script_tag(url="https://cdnjs.cloudflare.com/ajax/libs/axe-core/4.7.2/axe.min.js")
